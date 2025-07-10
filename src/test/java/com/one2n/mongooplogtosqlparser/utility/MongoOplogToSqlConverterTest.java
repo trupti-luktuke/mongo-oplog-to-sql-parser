@@ -61,7 +61,7 @@ class MongoOplogToSqlConverterTest {
      * @throws InterruptedException if the thread executing the test is interrupted
      */
     @Test
-    void testInvalidOpType() {
+    void testInvalidOpType() throws ExecutionException, InterruptedException {
         String oplogJson = """
                 {
                     "op": "u",
@@ -83,7 +83,7 @@ class MongoOplogToSqlConverterTest {
      * @throws InterruptedException if the thread executing the test is interrupted
      */
     @Test
-    void testInvalidNsFormat() {
+    void testInvalidNsFormat() throws ExecutionException, InterruptedException {
         String oplogJson = """
                 {
                     "op": "i",
